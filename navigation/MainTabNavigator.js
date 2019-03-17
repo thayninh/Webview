@@ -3,58 +3,77 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import DiaDiem from '../screens/DiaDiemScreen';
+import LichTrinh from '../screens/LichTrinhScreen';
+import LienHe from '../screens/LienHeScreen';
+import TrangChuScreen from '../screens/TrangChuScreen';
+import LichTrinhScreen from '../screens/LichTrinhScreen';
+import DiaDiemScreen from '../screens/DiaDiemScreen';
+import LienHeScreen from '../screens/LienHeScreen';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+const TrangChuStack = createStackNavigator({
+  TrangChu: TrangChuScreen,
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+TrangChuStack.navigationOptions = {
+  tabBarLabel: 'Trang Chủ',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? 'ios-home'
+          : 'md-home'
       }
     />
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const LichTrinhStack = createStackNavigator({
+  LichTrinh: LichTrinhScreen,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+LichTrinhStack.navigationOptions = {
+  tabBarLabel: 'Lịch Trình',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+      name={Platform.OS === 'ios' ? 'ios-map' : 'md-map'}
     />
   ),
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+const DiaDiemStack = createStackNavigator({
+  DiaDiem: DiaDiemScreen,
 });
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+DiaDiemStack.navigationOptions = {
+  tabBarLabel: 'Địa Điểm',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+      name={Platform.OS === 'ios' ? 'ios-locate' : 'md-locate'}
+    />
+  ),
+};
+
+const LienHeStack = createStackNavigator({
+  LienHe: LienHeScreen,
+});
+
+LienHeStack.navigationOptions = {
+  tabBarLabel: 'Liên Hệ',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-information-circle' : 'md-information-circle'}
     />
   ),
 };
 
 export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
+  TrangChuStack,
+  LichTrinhStack,
+  DiaDiemStack,
+  LienHeStack,
 });
