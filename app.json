@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Webview",
-    "slug": "Webview",
+    "name": "TAQuangBinh",
+    "slug": "taquangbinh",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
@@ -23,7 +23,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "cargis.org.taquangbinh"
+    },
+    "android": {
+      "package": "cargis.org.taquangbinh"
     }
   }
 }

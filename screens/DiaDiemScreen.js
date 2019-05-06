@@ -5,6 +5,11 @@ export default class DiaDiemScreen extends React.Component {
     static navigationOptions = {
       title: 'ĐỊA ĐIỂM',
     };
+    onNavigationStateChange(navState) {
+      this.setState({
+        canGoBack: navState.canGoBack
+      });
+    }
     render() {
       return (
         <View style={styles.container}>
@@ -12,6 +17,7 @@ export default class DiaDiemScreen extends React.Component {
             source={{ uri: 'https://vnexpress.net/' }}
           />
         </View>
+        
       );
     }
   }
@@ -20,5 +26,9 @@ export default class DiaDiemScreen extends React.Component {
     container: {
       flex: 1,
       backgroundColor: '#fff',
+    },
+    topbar:{
+      flex: 1,
+      backgroundColor: 'red',
     }
   });
